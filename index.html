@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle Financeiro Pessoal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Finanças Pessoais</h1>
+      <nav id="tabs"></nav>
+      <button id="exportDataBtn" class="secondary">Exportar JSON</button>
+      <label class="import-label">
+        Importar JSON
+        <input type="file" id="importDataInput" accept="application/json" />
+      </label>
+    </aside>
+
+    <main class="content">
+      <header class="top-bar">
+        <h2 id="activeTitle">Visão Geral</h2>
+        <div class="filters">
+          <select id="filterMonth"></select>
+          <select id="filterYear"></select>
+          <input id="filterCategory" type="text" placeholder="Filtrar categoria" />
+          <input id="filterPerson" type="text" placeholder="Filtrar pessoa" />
+        </div>
+      </header>
+
+      <section id="alerts" class="alerts"></section>
+
+      <section id="overview" class="tab-content active"></section>
+      <section id="receitas" class="tab-content"></section>
+      <section id="gastos" class="tab-content"></section>
+      <section id="dividas" class="tab-content"></section>
+      <section id="receber" class="tab-content"></section>
+      <section id="parcelamentos" class="tab-content"></section>
+      <section id="cartoes" class="tab-content"></section>
+      <section id="metas" class="tab-content"></section>
+      <section id="planejamento" class="tab-content"></section>
+      <section id="relatorios" class="tab-content"></section>
+      <section id="modelo" class="tab-content"></section>
+    </main>
+  </div>
+
+  <template id="moduleTemplate">
+    <div class="module-card">
+      <h3></h3>
+      <form class="data-form"></form>
+      <div class="table-wrap"></div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
