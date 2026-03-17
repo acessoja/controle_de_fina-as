@@ -1,0 +1,16 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #1d2433;
+  --muted: #6f7891;
+  --primary: #4f46e5;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --warning: #d97706;
+  --border: #e2e8f0;
+}
+* { box-sizing: border-box; font-family: Inter, system-ui, Arial, sans-serif; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+input, select, textarea, button { border: 1px solid var(--border); border-radius: 8px; padding: 8px; background: #fff; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border-bottom: 1px solid var(--border); padding: 8px; text-align: left; font-size: 0.92rem; }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Controle Financeiro Pessoal</title>
+
+  <!-- Base e layout global -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+
+  <!-- Estilos por módulo -->
+  <link rel="stylesheet" href="styles/modules/visao-geral.css" />
+  <link rel="stylesheet" href="styles/modules/receitas.css" />
+  <link rel="stylesheet" href="styles/modules/gastos.css" />
+  <link rel="stylesheet" href="styles/modules/dividas.css" />
+  <link rel="stylesheet" href="styles/modules/valores-receber.css" />
+  <link rel="stylesheet" href="styles/modules/parcelamentos.css" />
+  <link rel="stylesheet" href="styles/modules/cartoes.css" />
+  <link rel="stylesheet" href="styles/modules/reserva-metas.css" />
+  <link rel="stylesheet" href="styles/modules/planejamento.css" />
+  <link rel="stylesheet" href="styles/modules/relatorios.css" />
+  <link rel="stylesheet" href="styles/modules/modelo-planilha.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Finanças Pessoais</h1>
+      <nav id="tabs"></nav>
+
+      <!-- INÍCIO: exportar json -->
+      <button id="exportDataBtn" class="secondary">Exportar JSON</button>
+      <label class="import-label">
+        Importar JSON
+        <input type="file" id="importDataInput" accept="application/json" />
+      </label>
+      <!-- FIM: exportar json -->
+    </aside>
+
+    <main class="content">
+      <header class="top-bar">
+        <h2 id="activeTitle">Visão Geral</h2>
+        <div class="filters">
+          <select id="filterMonth"></select>
+          <select id="filterYear"></select>
+          <input id="filterCategory" type="text" placeholder="Filtrar categoria" />
+          <input id="filterPerson" type="text" placeholder="Filtrar pessoa" />
+        </div>
+      </header>
+
+      <section id="alerts" class="alerts"></section>
+
+      <!-- INÍCIO: visão geral -->
+      <section id="overview" class="tab-content active"></section>
+      <!-- FIM: visão geral -->
+
+      <!-- INÍCIO: receitas -->
+      <section id="receitas" class="tab-content"></section>
+      <!-- FIM: receitas -->
+
+      <!-- INÍCIO: gastos -->
+      <section id="gastos" class="tab-content"></section>
+      <!-- FIM: gastos -->
+
+      <!-- INÍCIO: dívidas -->
+      <section id="dividas" class="tab-content"></section>
+      <!-- FIM: dívidas -->
+
+      <!-- INÍCIO: valores a receber -->
+      <section id="receber" class="tab-content"></section>
+      <!-- FIM: valores a receber -->
+
+      <!-- INÍCIO: parcelamentos -->
+      <section id="parcelamentos" class="tab-content"></section>
+      <!-- FIM: parcelamentos -->
+
+      <!-- INÍCIO: cartões -->
+      <section id="cartoes" class="tab-content"></section>
+      <!-- FIM: cartões -->
+
+      <!-- INÍCIO: reserva e metas -->
+      <section id="metas" class="tab-content"></section>
+      <!-- FIM: reserva e metas -->
+
+      <!-- INÍCIO: planejamento -->
+      <section id="planejamento" class="tab-content"></section>
+      <!-- FIM: planejamento -->
+
+      <!-- INÍCIO: relatórios -->
+      <section id="relatorios" class="tab-content"></section>
+      <!-- FIM: relatórios -->
+
+      <!-- INÍCIO: modelo de planilha -->
+      <section id="modelo" class="tab-content"></section>
+      <!-- FIM: modelo de planilha -->
+    </main>
+  </div>
+
+  <template id="moduleTemplate">
+    <div class="module-card">
+      <h3></h3>
+      <form class="data-form"></form>
+      <div class="table-wrap"></div>
+    </div>
+  </template>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
